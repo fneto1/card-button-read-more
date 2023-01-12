@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #313131;
+}
+
+.bloco {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 300px;
+    padding: 25px;
+    text-align: justify;
+    background: #3f3f3f;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.389);
+    position: relative;
+}
+
+.bloco::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: 20px solid transparent;
+    border-top: 20px solid #06d62e;
+    border-right: 20px solid #06d62e;
+
+}
+
+.imagem{
+    margin-bottom: 20px;
+}
+
+.imagem img {
+    width: 250px;
+}
+
+.conteudo{
+    height: 215px;
+    overflow: hidden;
+    position: relative;
+
+}
+
+/*Acrescentando o fade ao final do texto*/
+.conteudo::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(transparent, #3f3f3f);
+}
+
+.conteudo h3{
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 20px;
+    position: relative;
+}
+
+/*Acrescentando uma linha abaixo do título*/
+
+.conteudo h3::before{
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 40px;
+    background: #06d62e;
+    bottom: 3px;
+    border-radius: 100px;
+}
+
+.conteudo p{
+    color: #b7b7b7;
+}
+
+#botao_leia{
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 15px;
+    background: #06d62e;
+    color: #313131;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.2s ease-in-out;
+}
+
+#botao_leia:hover{
+    background: transparent;
+    color: #06d62e;
+    transition: all 0.2s ease-in-out;
+}
+
+.bloco.active .conteudo{
+    height: auto;
+}
+
+.bloco.active .conteudo::before{
+    visibility: hidden;
+}
